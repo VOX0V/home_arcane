@@ -1,12 +1,23 @@
 #!/usr/bin/with-contenv bashio
 set -e
+
 bashio::log.info "Starting Arcane Manager..."
+
 export PORT=3552
 export ENVIRONMENT=production
 export ARCANE_IN_CONTAINER=true
 export GIN_MODE=release
+export DATA_DIR=/data
 export APP_URL="http://127.0.0.1:3552"
 export ANALYTICS_DISABLED=true
 export PROJECTS_DIRECTORY=/data/projects
+
+if [ -s /data/.encryption_key ]; then
+    export ENCRYPTION_KEY="$(cat /data/.encryption_key)"
+else
+    bashio::log.error "Missing encryption key at /data/.encryption_key"
+    exit 1
+fi
+
 cd /app
 exec /app/arcane
