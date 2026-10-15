@@ -1,0 +1,4 @@
+configuration:
+  encryption_key:
+    name: Encryption key
+    description: Optional 32-byte Arcane encryption key. Leave blank to generate and persist one automatically.

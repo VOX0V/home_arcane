@@ -1,0 +1,2 @@
+#!/usr/bin/with-contenv bashio
+bashio::log.warning "Arcane process exited with code $1"
