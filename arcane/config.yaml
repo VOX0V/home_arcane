@@ -1,5 +1,5 @@
 name: Arcane
-version: "0.1.3"
+version: "0.1.4"
 slug: arcane_remote
 description: "Arcane Docker Manager for remote Docker hosts from Home Assistant OS."
 url: "https://getarcane.app/"
@@ -20,5 +20,7 @@ options:
   encryption_key: ""
 schema:
   encryption_key: password?
-ports: {}
-ports_description: {}
+ports:
+  3552/tcp: 8352
+ports_description:
+  3552/tcp: "Accès temporaire direct à Arcane"
