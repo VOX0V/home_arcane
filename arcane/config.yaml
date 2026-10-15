@@ -1,5 +1,5 @@
 name: Arcane
-version: "0.1.1"
+version: "0.1.2"
 slug: arcane_remote
 description: "Arcane Docker Manager for remote Docker hosts from Home Assistant OS."
 url: "https://getarcane.app/"
